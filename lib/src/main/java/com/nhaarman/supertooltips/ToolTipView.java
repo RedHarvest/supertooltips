@@ -212,6 +212,12 @@ public class ToolTipView extends LinearLayout implements ViewTreeObserver.OnPreD
     }
 
     private void applyToolTipPosition() {
+        if (getParent() == null) {
+            // getParent() should always return the tooltipRelativeLayout that this tooltipView
+            //    is attached to. If it returns null, hosting/parent view was likely destroyed.
+            return;
+        }
+
         final int[] masterViewScreenPosition = new int[2];
         mView.getLocationOnScreen(masterViewScreenPosition);
 
