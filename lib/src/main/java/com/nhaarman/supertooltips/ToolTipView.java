@@ -369,6 +369,8 @@ public class ToolTipView extends LinearLayout implements ViewTreeObserver.OnPreD
 
     /**
      * Convenience method for setting X.
+     * NOTE: This doesn't actually work for some reason. If you try using it, it just centers the
+     * tooltip horizontally in the parent view.
      */
     @SuppressLint("NewApi")
     @Override
